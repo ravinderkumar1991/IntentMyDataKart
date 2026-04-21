@@ -16,6 +16,18 @@ app.UseAuthorization();
 
 app.MapStaticAssets();
 
+
+
+app.MapControllerRoute(
+    name: "company_registration",
+    pattern: "CompanyRegistration",
+    defaults: new { controller = "Company", action = "CompanyRegistration" });
+
+app.MapControllerRoute(
+    name: "Dashboard_Dashboard",
+    pattern: "Dashboard",
+    defaults: new { controller = "Dashboard", action = "Dashboard" });
+
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}")
