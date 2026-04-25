@@ -1,4 +1,6 @@
-﻿namespace IntentMyDataKart.Models
+﻿using Microsoft.AspNetCore.Mvc.Rendering;
+
+namespace IntentMyDataKart.Models
 {
     public class UserRegistrationModel
     {
@@ -6,7 +8,11 @@
         public string? Name { get; set; }
         public string? Email { get; set; }
         public long? CompanyRegistrationId { get; set; }
+        public List<SelectListItem> CompanyList { get; set; }
+        public string? Country { get; set; }
         public int? RoleId { get; set; }
+        public List<SelectListItem> RoleList { get; set; }
+      
         public string? State { get; set; }
         public string? City { get; set; }
         public string? Pincode { get; set; }

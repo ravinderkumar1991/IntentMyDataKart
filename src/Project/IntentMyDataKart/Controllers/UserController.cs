@@ -1,5 +1,8 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using IntentMyDataKart.Database.BAL;
+using IntentMyDataKart.Models;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace IntentMyDataKart.Controllers
 {
@@ -21,7 +24,15 @@ namespace IntentMyDataKart.Controllers
         // GET: UserController/Create
         public ActionResult Create()
         {
-            return View();
+            UserRegistrationModel model = new UserRegistrationModel();
+            List<SelectListItem> CompanyList =  UserDAL.GetCompany().Select(x => new SelectListItem()
+            {
+                Text =  x.Company,
+                Value =  x.CompanyRegistrationId.ToString()
+            }).ToList();
+            model.CompanyList = CompanyList;
+            model.RoleList = UserDAL.GetRole();
+            return View(model);
         }
 
         // POST: UserController/Create
