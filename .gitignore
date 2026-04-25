@@ -2,7 +2,7 @@
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
 
-/.vs
-/bin
-/obj
-/.vscode
+/src/Project/IntentMyDataKart/.vs
+/src/Project/IntentMyDataKart/bin
+/src/Project/IntentMyDataKart/obj
+/src/Project/IntentMyDataKart/.vscode

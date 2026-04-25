@@ -1,9 +1,21 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
-    <TargetFramework>net10.0</TargetFramework>
+    <TargetFramework>net9.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="7.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.6" />
+    <!-- Alternative:
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="5.1.1" />
+    If you use Microsoft.Data.SqlClient, update SqlDataAccess.cs:
+    replace `using System.Data.SqlClient;` with `using Microsoft.Data.SqlClient;`
+    -->
+  </ItemGroup>
 </Project>
